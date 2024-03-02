@@ -1,0 +1,282 @@
+@charset "utf-8";
+@import "common";
+// @import "company";
+// @import "message";
+
+// ヘッダーナビ
+.header{
+    position: relative;
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 70px;
+        height: 90px;
+        @include sp{
+            position: fixed;
+            width: 100%;
+            background-color: white;
+            height: 60px;
+            padding: 0 20px;
+        }
+    }
+    &__logo{
+        width: 167px;
+        @include sp{
+            width: 107px;
+        }
+    }
+    .nav__list{
+        display: flex;
+        gap: 30px;
+        transition: all 400ms;
+        @include sp{
+            position: fixed;
+            display: block;
+            padding: 100px 20px;
+            background-color: $main-pink;
+            height: 100vh;
+            width: 200px;
+            right: -200%;
+            top: 0;
+            z-index: 10;
+            &.open{
+                right: 0;
+            }
+        }
+        li{
+            transition: 0.3s;
+            @include sp{
+                color: white;
+                margin-bottom: 33px;
+            }
+            &:hover{
+                color: $main-pink;
+                @include sp{
+                    color: #EF90A4;
+                }
+            }
+        }
+    }
+    &__sp-menubtn {
+        display: none;
+        &:before{
+            content: "";
+            background-color: $main-pink;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            padding: 32px 33px;
+            top: -90%;
+            right: -20px;
+        }
+        @include sp{
+            display: block;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 26px;
+            height: 24px;
+            z-index: 12;
+            box-sizing: border-box;
+            cursor: pointer;
+            -webkit-transition: all 400ms;
+            transition: all 400ms;
+            span {
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background: white;
+                border-radius: 10px;
+                -webkit-transition: all 400ms;
+                transition: all 400ms;
+                &:nth-child(1) {
+                    top: 0;
+                }
+                &:nth-child(2) {
+                    top: 10px;
+                }
+                &:nth-child(3) {
+                    top: 20px;
+                }
+            }
+        }
+        &.open {
+            span{
+                &:nth-child(1) {
+                    top: 6px;
+                    -webkit-transform: rotate(-45deg);
+                    -moz-transform: rotate(-45deg);
+                    transform: rotate(-45deg);
+                }
+                &:nth-child(2),
+                &:nth-child(3) {
+                    top: 6px;
+                    -webkit-transform: rotate(45deg);
+                    -moz-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                    transition: 0.9s;
+                }
+            }
+        }
+    } 
+    
+}
+
+// ファーストビュースタイル
+.Fv{
+    height: 600px;
+    background: url("../images/pc_bg_mv.png") no-repeat center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    &__title{
+        font-size: 160px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+        @include sp{
+            font-size: 80px;
+        }
+    }
+    &__subTitle{
+        font-size: 24px;
+    }
+}
+
+// ニュース
+.news{
+    &__wrapper{
+        margin-top: 70px;
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+        @include sp{
+            display: block;
+        }
+    }
+    &__title{
+        width: 30%;
+        white-space: nowrap;
+        @include sp{
+            width: 100%;
+            margin-bottom: 26px;
+        }
+    }
+    &__list{
+        max-width: 858px;
+    }
+    &__item{
+        display: flex;
+        align-items: stretch;
+        padding: 15px 0;
+        border-bottom: 1px solid #EDEDED;
+        line-height: 1.6;
+        @include sp{
+            display: block;
+        }
+        &:nth-child(1){
+            padding-top: 0;
+        }
+        &__title{
+            padding-right: 40px;
+            font-weight: 500;
+        }
+        &__desc{
+            width: 100%;
+        }
+    }
+}
+
+// サービス
+.service{
+    &__wrapper{
+        position: relative;
+        margin-top: 80px;
+    }
+    &__title{
+        position: relative;
+        margin-bottom: 60px;
+        @include sp{
+            margin-bottom: 26px;
+        }
+    }
+    &__list{
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        position: static;
+        z-index: 10;
+        @include sp{
+            flex-direction: column;
+        }
+        &::before{
+            content: "SERVICE";
+            position: absolute;
+            top: -13%;
+            right: 20px;
+            font-size: 168px;
+            font-weight: 700;
+            color: #F2F2F2;
+            z-index: -1;
+            @include sp{
+                font-size: 70px;
+                top: 0;
+                right: 0;
+            }
+        }
+        li{
+            width: 33%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 3px 21px rgba(0, 0, 0, 0.16);
+            padding: 50px;
+            @include sp{
+                width: 100%;
+                position: relative;
+                z-index: -1;
+            }
+        }
+        &__img{
+            margin-bottom: 8px;
+            width: 48px;
+        }
+        &__title{
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        &__desc{
+            line-height: 1.6;
+        }
+    }
+}
+// フッター
+.footer{
+    background-color: $main-pink;
+    margin-top: 100px;
+    &__wrapper{
+        padding: 64px 40px 50px;
+        max-width: 1100px;
+        margin: auto;
+    }
+    &__list{
+        color: white;
+        display: flex;
+        gap: 40px;
+        li{
+            font-size: 14px;
+        }
+    }
+    &__copyright{
+        display: inline-block;
+        color: white;
+        margin-top: 20px;
+        font-size: 12px;
+    }
+}
