@@ -225,6 +225,8 @@ body {
 .service__wrapper {
   position: relative;
   margin-top: 80px;
+  position: relative;
+  z-index: -1;
 }
 .service__title {
   position: relative;
