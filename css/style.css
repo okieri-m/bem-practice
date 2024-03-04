@@ -150,7 +150,7 @@ body {
   transition: 0.9s;
 }
 
-.Fv {
+.fv {
   height: 600px;
   background: url("../images/pc_bg_mv.png") no-repeat center;
   background-size: cover;
@@ -161,17 +161,17 @@ body {
   text-align: center;
   color: white;
 }
-.Fv__title {
+.fv__title {
   font-size: 160px;
   font-family: "Roboto", sans-serif;
   font-weight: 700;
 }
 @media (max-width: 768px) {
-  .Fv__title {
+  .fv__title {
     font-size: 80px;
   }
 }
-.Fv__subTitle {
+.fv__subTitle {
   font-size: 24px;
 }
 
@@ -283,15 +283,15 @@ body {
     z-index: -1;
   }
 }
-.service__list__img {
+.service__list__listImg {
   margin-bottom: 8px;
   width: 48px;
 }
-.service__list__title {
+.service__list__listTitle {
   margin-bottom: 20px;
   font-size: 18px;
 }
-.service__list__desc {
+.service__list__listDesc {
   line-height: 1.6;
 }
 
