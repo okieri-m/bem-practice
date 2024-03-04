@@ -124,7 +124,7 @@
 }
 
 // ファーストビュースタイル
-.Fv{
+.fv{
     height: 600px;
     background: url("../images/pc_bg_mv.png") no-repeat center;
     background-size: cover;
@@ -245,15 +245,15 @@
                 z-index: -1;
             }
         }
-        &__img{
+        &__listImg{
             margin-bottom: 8px;
             width: 48px;
         }
-        &__title{
+        &__listTitle{
             margin-bottom: 20px;
             font-size: 18px;
         }
-        &__desc{
+        &__listDesc{
             line-height: 1.6;
         }
     }
